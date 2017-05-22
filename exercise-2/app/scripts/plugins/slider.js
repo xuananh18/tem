@@ -35,14 +35,7 @@
       this.element.trigger('customEvent');
     },
     slider: function(options) {
-    	var defaults = {
-    		slideshare: $('.slide-share'),
-    		dotshare: $('.dot-share'),
-    		previous: $('.previous'),
-    		next: $('.next'),
-    		index: 0,
-    		play: null,
-    		event:'click'
+    	
     	}
     }
     destroy: function() {
