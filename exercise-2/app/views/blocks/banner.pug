@@ -1,0 +1,15 @@
+nav.sliders
+	-
+		var sliderImg = ["upload/slider.jpg", "upload/slider-2.jpg", "upload/slider-3.jpg", "upload/slider-4.jpg"]
+	-
+		var contents = ["At Naturetour we are constantly adding to and improving our portfolio of", "At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you", "At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife", "At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving."]
+	+ul-group('slide slide-share','banner')
+	button.previous
+	button.next
+	ol.dots
+		|
+		|
+		- for(var i = 1; i <= sliderImg.length; i++)
+			li(class="dot dot-share") #{i}
+			|
+			|

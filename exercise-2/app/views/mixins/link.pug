@@ -1,0 +1,24 @@
+mixin link(title, href, text)
+  - if (typeof(text) === 'undefined') text = title
+  - if (typeof(href) === 'undefined') href = '#'
+  a(href=href, title=title)&attributes(attributes)
+    if block
+      block
+    else
+      !=text
+mixin link-img(name, cl, alt)
+  img(src="../images/"+name, class=cl, alt=alt)
+mixin ul-group(cl, title)
+  ul
+    - for (var item = 0; item < sliderImg.length; item++)
+      li
+        a(href="#", title=title) 
+          +link-img(sliderImg[item], cl, sliderImg[item])
+      
+        .text-slide
+          p= contents[item]
+mixin ul-group2(cl, title)
+  ul
+    each item in sliderImg
+      li: a(href="#", title=title) 
+            +link-img(item, cl, item)

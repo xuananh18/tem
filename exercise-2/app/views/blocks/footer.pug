@@ -1,0 +1,40 @@
+include ../mixins/all
+
+footer
+	.footer-top-block
+		.contact-block
+			.contact-left
+				h2 contact us
+				p
+					span address:
+					| 72/4 truong quoc dung street, ward 10, phu nhuan district, ho chi minh city, viet nam
+				p
+					span tel:
+					| +848 3997 5901
+				p
+					span fax:
+					| +848 3997 5900
+				p
+					span email:
+					|	contact-us@sutrixmedia.com
+			.contact-right
+				h2 quick links
+				ul
+					-	name =	["contact us", "latest news", "faq<span>s</span>", "terms &amp; conditions", "privacy policy"]
+					each item in name
+						li: a(href="#", title != item)!= item
+					|
+					|
+		.newletter-block
+			h2 newsletter
+			form(action="", method="post", name="signup", class="signup-form")
+				input(type="text", name="signup", placeholder=" Enter Email ...")
+				button(type="submit") sign up
+	.footer-bottom-block
+		.footer-bottom-left
+			ul
+				- name = ["homepage", "about us", "services", "new &amp; events", "gallery", "contact us","fAQs"]
+				each item in name
+					li: a(href="#", title!=item)!= item
+		.footer-bottom-right
+			p !{'copyright &copy; 2014 template demo all right reserve.'}

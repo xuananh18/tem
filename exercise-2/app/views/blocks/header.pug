@@ -1,0 +1,30 @@
+include ../mixins/all
+
+header
+	.search-group
+		.logo
+			+link-img('logo.png', 'logo.png')
+		.search
+			form(action="#", method="post", name="search", id ="search-form", class="search-form")
+				input(type="text", name="search", placeholder=" Search")
+				button.search-btn: +link-img('icon-search.png')
+			.lang
+				|
+				|
+				a(href='#', title='vn'): +link-img('vn.png', 'vn.png')
+				a(href='#', title='en'): +link-img('en.png', 'en.png')
+				a(href='#', title='ru'): +link-img('ru.png', 'ru.png')
+				|
+				|
+	.menu#topNav
+		ul
+			-
+				var	faq = "faq<span>s</span>"
+				var	name = ["about us", "services", "news &amp; events", "gallery","contact us"]
+			each item in name
+				li: a(href="#", title != item)!= item
+			li: a(href="#",title="faqs") !{faq}
+		a(href="javascript:void(0);", class="icon") &#9776;
+		|
+		|
+		a(href="javascript:void(0);", class="icon2") &#9747;
