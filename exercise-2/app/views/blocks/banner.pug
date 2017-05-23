@@ -1,15 +1,19 @@
-nav.sliders
+.sliders(data-sliders)
 	-
 		var sliderImg = ["upload/slider.jpg", "upload/slider-2.jpg", "upload/slider-3.jpg", "upload/slider-4.jpg"]
 	-
 		var contents = ["At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife viewing experiences we are constantly adding to and improving.", "At Naturetour we are constantly adding to and improving our portfolio of", "At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you", "At Naturetour we are constantly adding to and improving our portfolio of wildlife holidays to provide you with an even greater choice of wildlife"]
-	+ul-group('slide slide-share','banner')
+	- 
+		var titles = ["banner 1", "banner 2", "banner 3", "banner 4",]
+	- 
+		var alts = ["slide-1", "slide-2", "slide-3", "slide-4",]
+	+ul-group('slide')
 	button.previous
 	button.next
 	ol.dots
 		|
 		|
 		- for(var i = 1; i <= sliderImg.length; i++)
-			li(class="dot dot-share") #{i}
+			li(class="dot") #{i}
 			|
 			|

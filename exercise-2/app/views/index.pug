@@ -14,28 +14,18 @@ block container
 			.welcome-block-left
 				h2 Welcome to our Web Site !
 				p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.It was popularised in the 1960s with the release of Letraset sheets containing  ...
-					| !{'<a href="#" title="">View more</a>'}
-			.welcome-block-right
-				nav.welcome-block-slider
-					- sliderImg = ["upload/slider-thumb.jpg", "upload/slider-thumb-1.jpg", "upload/slider-thumb-2.jpg", "upload/slider-thumb-3.jpg"]
-						+ul-group2('slide-2')
-					ol.dots-2
-						|
-						|
-						- for(var i = 1; i <= sliderImg.length; i++)
-							li(class="dot-2")
-							|
-							|
+					| !{'<a href="#" title="view more">View more</a>'}
+			include blocks/welcome-slider
 		.content-group-block
 			.newevent-content-block
 				.title
 					h2 news &amp; events
 					|
 					|
-					a(href="#", title="") View more
+					a(href="#", title="view more") View more
 				.newevent-content-1
 					.img-thumb
-						+link-img('upload/thumb-2.jpg',"",'upload/thumb-2.jpg')
+						+link-img('upload/thumb-2.jpg','','upload/thumb-2.jpg')
 					.block-child
 						.title-block-child
 							strong: a(href="#", title="consetetour") consetetour sadipscing nonumy elitr...
@@ -53,39 +43,5 @@ block container
 							li: strong: a(href="#", title="consetetour") consetetour sadipscing elitr consetetour sadipscing elitr consete...
 						p 18.12.2013
 					p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
-			.partners-block
-				.title
-					h2 partners
-				.partners-slider
-					.slide-3.group-img
-						|
-						|
-						- sliderImg = ["upload/logo-1.jpg", "upload/logo-2.jpg", "upload/logo-3.jpg"]
-						.group-img-1
-							each slide in sliderImg
-								a(href="#", class="single-img"): +link-img(slide)
-								|
-								|
-						- sliderImg = ["upload/logo-4.jpg", "upload/logo-5.jpg", "upload/logo-6.jpg"]
-						.group-img-2
-							each slide in sliderImg
-								a(href="#", class="single-img"): +link-img(slide)
-								|
-								|
-					.slide-3.group-img
-						|
-						|
-						- sliderImg = ["upload/logo-demo-1.png", "upload/logo-demo-2.png", "upload/logo-demo-3.png"]
-						.group-img-1
-							each slide in sliderImg
-								a(href="#", class="single-img"): +link-img(slide)
-								|
-								|
-						- sliderImg = ["upload/logo-demo-4.png", "upload/logo-demo-5.png", "upload/logo-demo-6.png"]
-						.group-img-2
-							each slide in sliderImg
-								a(href="#", class="single-img"): +link-img(slide)
-								|
-								|
-					button.previous-3
-					button.next-3
+			
+			include blocks/partner-slider

@@ -1,0 +1,51 @@
+.partners-block
+	.title
+		h2 partners
+	.partners-slider(data-sliders 
+					data-slideshare = '.slide-3'
+					data-dotshare = ''
+					data-previous = '.previous-3'
+					data-next = '.next-3'
+					data-times = '5000'
+					data-index = '0'
+					data-active = 'active'
+					data-display = 'flex'
+					data-textslide = '')
+		.slide-3.group-img
+			|
+			|
+			- sliderImg = ["upload/logo-1.jpg", "upload/logo-2.jpg", "upload/logo-3.jpg"]
+			- alts = ["slide-1", "slide-2", "slide-3"]
+			- titles = ["partner slide 1", "partner slide 2", "partner slide 3"]
+			.group-img-1
+				each slide,value in sliderImg
+					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
+					|
+					|
+			- sliderImg = ["upload/logo-4.jpg", "upload/logo-5.jpg", "upload/logo-6.jpg"]
+			- titles = ["partner slide 1", "partner slide 2", "partner slide 3"]
+			.group-img-2
+				each slide, value in sliderImg
+					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
+					|
+					|
+		.slide-3.group-img
+			|
+			|
+			- sliderImg = ["upload/logo-demo-1.png", "upload/logo-demo-2.png", "upload/logo-demo-3.png"]
+			- alts = ["slide-4", "slide-5", "slide-6"]
+			- titles = ["partner slide 4", "partner slide 5", "partner slide 6"]
+			.group-img-1
+				each slide,value in sliderImg
+					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
+					|
+					|
+			- sliderImg = ["upload/logo-demo-4.png", "upload/logo-demo-5.png", "upload/logo-demo-6.png"]
+			- titles = ["partner slide 4", "partner slide 5", "partner slide 6"]
+			.group-img-2
+				each slide, value in sliderImg
+					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
+					|
+					|
+		button.previous-3
+		button.next-3

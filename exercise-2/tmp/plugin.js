@@ -26,12 +26,19 @@
     this.init();
   }
 
+
+  function fsafas(el, opt) {
+
+  }
+
   Plugin.prototype = {
     init: function() {
       var that = this;
       this.vars = {
         key: 'value'
       };
+      var el = this.element,
+          opt = this.options;
       // initialize
       // add events
     },

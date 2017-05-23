@@ -16,7 +16,7 @@ header
 				a(href='#', title='ru'): +link-img('ru.png', 'ru.png')
 				|
 				|
-	.menu#topNav
+	.menu#topnav(data-navs)
 		ul
 			-
 				var	faq = "faq<span>s</span>"
@@ -24,7 +24,7 @@ header
 			each item in name
 				li: a(href="#", title != item)!= item
 			li: a(href="#",title="faqs") !{faq}
-		a(href="javascript:void(0);", class="icon") &#9776;
+		a(href="javascript:void(0);", class="icon-menu") &#9776;
 		|
 		|
-		a(href="javascript:void(0);", class="icon2") &#9747;
+		a(href="javascript:void(0);", class="icon-close") &#9747;

@@ -1,5 +1,5 @@
 /**
- *  @name slider
+ *  @name sliders
  *  @description description
  *  @version 1.0
  *  @options
@@ -8,36 +8,70 @@
  *    event
  *  @methods
  *    init
- *    publicMethod
- *    destroy
  */
-/*;(function($, window, undefined){
+;(function($, window, undefined){
 	'use strict';
 
-  var pluginName = 'slider';
-  var privateVar = null;
-  var privateMethod = function(el, options) {
-  };
+  var pluginName = 'sliders';
   function Plugin(element, options) {
     this.element = $(element);
     this.options = $.extend({}, $.fn[pluginName].defaults, this.element.data(), options);
     this.init();
   }
+
+  function slider(el, opt) {
+  	var count = $(opt.slideshare).length,
+			index = opt.index,
+			times = opt.times,
+			play = null;
+		function setslide(){
+			if(opt.textslide !=='') {
+				$(opt.textslide).removeClass(opt.display);
+				$(opt.textslide).eq(index-1).addClass(opt.display);
+			}
+			if(opt.dotshare !=='') {
+				$(opt.dotshare).removeClass(opt.active);
+				$(opt.dotshare).eq(index-1).addClass(opt.active);
+			}
+			$(opt.slideshare).removeClass(opt.display);
+			$(opt.slideshare).eq(index-1).addClass(opt.display);
+		}
+		function showslide(){
+			if(index === count){index=0;}
+			index++;
+			setslide();
+			play= setTimeout(showslide,times);
+		}
+		showslide(index);
+		$(opt.dotshare).bind('click', function(){
+			index = $(opt.dotshare).index(this);
+			clearTimeout(play);
+			showslide(index);
+		});
+		if(opt.previous !=='') {
+			$(opt.previous).bind('click', function(){
+				if(index === 0){index=count;}
+				index=index-2;
+				clearTimeout(play);
+				showslide(index);
+			});
+		}
+		if(opt.next !=='') {
+			$(opt.next).bind('click', function(){
+				if(index === count-1){index=-1;}
+				clearTimeout(play);
+				showslide(index);
+			});
+		}
+  }
   Plugin.prototype = {
     init: function() {
-      var that = this;
-      this.vars = {
-        key: 'value'
-      };
+      slider(this.element, this.options);
     },
-    publicMethod: function(params) {
+    publicMethod: function() {
       $.isFunction(this.options.onCallback) && this.options.onCallback();
       this.element.trigger('customEvent');
     },
-    slider: function(options) {
-    	
-    	}
-    }
     destroy: function() {
       $.removeData(this.element[0], pluginName);
     }
@@ -45,151 +79,31 @@
 
   $.fn[pluginName] = function(options, params) {
     return this.each(function() {
-    	var opt = options;
-			var count = $('.slide-share').length;
-			var index=0;
-			var play=null;
-			$('.dot-share').bind("click", function(){
-				index = $('.dot-share').index(this);
-				clearTimeout(play);
-				showslide(index);
-			})
-
-			$('.previous').bind("click", function(){
-				if(index==0){index=count;}
-				index= index-2;
-				clearTimeout(play);
-				showslide(index-2);
-			})
-
-			$('.next').bind("click", function(){
-				if(index==count){index=0;}
-				clearTimeout(play);
-				showslide(index);
-			})
-
-			function setslide(){
-				$('.dot-share').removeClass('active');
-				$('.dot-share:eq(' + (index-1) + ')').addClass('active');
-				$('.slide-share').removeClass('block');
-				$('.slide-share:eq(' + (index-1) + ')').addClass('block');
-			}
-			function showslide(n){
-				if(index==count){index=0;}
-				index++;
-				setslide();
-				play= setTimeout(showslide,3000);
-			}
-			showslide(index);
+    	var instance = $.data(this, pluginName);
+      if (!instance) {
+        $.data(this, pluginName, new Plugin(this, options));
+      } else if (instance[options]) {
+        instance[options](params);
+      }
     });
   };
 
   $.fn[pluginName].defaults = {
-    key: 'value',
-    onCallback: null
+    slideshare: '.slide',
+		dotshare: '.dot',
+		previous: '.previous',
+		next: '.next',
+		times: '3000',
+		index: '0',
+		active: 'active',
+		display: 'block',
+		textslide: '.text-slide'
   };
 
   $(function() {
-    $('[data-' + pluginName + ']').on('customEvent', function() {
-    });
-
     $('[data-' + pluginName + ']')[pluginName]({
       key: 'custom'
     });
-  });*/
-	/*var count = $('.slide-share').length;
-	var index=0;
-	var play=null;
-	$('.dot-share').bind("click", function(){
-		index = $('.dot-share').index(this);
-		clearTimeout(play);
-		showslide(index);
-	})
-
-	$('.previous').bind("click", function(){
-		if(index==0){index=count;}
-		index= index-2;
-		clearTimeout(play);
-		showslide(index-2);
-	})
-
-	$('.next').bind("click", function(){
-		if(index==count){index=0;}
-		clearTimeout(play);
-		showslide(index);
-	})
-
-	function setslide(){
-		$('.dot-share').removeClass('active');
-		$('.dot-share:eq(' + (index-1) + ')').addClass('active');
-		$('.slide-share').removeClass('block');
-		$('.slide-share:eq(' + (index-1) + ')').addClass('block');
-	}
-	function showslide(n){
-		if(index==count){index=0;}
-		index++;
-		setslide();
-		play= setTimeout(showslide,3000);
-	}
-	showslide(index);*/
+  });
 	
-/*}(jQuery, window));*/
-;(function($){
- 	$.fn.extend({ 
- 		//plugin name - animatemenu
- 		slider: function(options) {
-
-			var defaults = {
-		    slideshare: $('.slide-share'),
-    		dotshare: $('.dot-share'),
-    		previous: $('.previous'),
-    		next: $('.next'),
-    		index: 0,
-    		play: null,
-    		event:'click',
-			};
-			
-			options = $.extend(defaults, options);
-		
-    		return this.each(function() {
-				  var opt = options;
-					var count = opt.slideshare.length;
-					var index=0;
-					var play=null;
-					function setslide(){
-						opt.dotshare.removeClass('active');
-						$('.dot-share:eq(' + (index-1) + ')').addClass('active');
-						opt.slideshare.removeClass('block');
-						$('.slide-share:eq(' + (index-1) + ')').addClass('block');
-					}
-					function showslide(n){
-						if(n===count){n=0;}
-						n++;
-						setslide();
-						play= setTimeout(showslide,3000);
-					}
-					opt.dotshare.bind(opt.click, function(){
-						index = opt.dotshare.index(this);
-						clearTimeout(play);
-						showslide(index);
-					});
-
-					opt.previous.bind(opt.click, function(){
-						if(index===0){index=count;}
-						index= index-2;
-						clearTimeout(play);
-						showslide(index-2);
-					});
-
-					opt.next.bind(opt.click, function(){
-						if(index===count){index=0;}
-						clearTimeout(play);
-						showslide(index);
-					});
-
-					
-					showslide(index);
-    		});
-    	}
-	});
-}(jQuery));
+}(jQuery, window));

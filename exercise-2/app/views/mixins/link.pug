@@ -7,18 +7,18 @@ mixin link(title, href, text)
     else
       !=text
 mixin link-img(name, cl, alt)
-  img(src="../images/"+name, class=cl, alt=alt)
-mixin ul-group(cl, title)
+  img(src="images/"+name, class=cl, alt=alt)
+mixin ul-group(cl)
   ul
     - for (var item = 0; item < sliderImg.length; item++)
       li
-        a(href="#", title=title) 
-          +link-img(sliderImg[item], cl, sliderImg[item])
+        a(href="#", title= titles[item]) 
+          +link-img(sliderImg[item], cl, alts[item])
       
         .text-slide
           p= contents[item]
-mixin ul-group2(cl, title)
+mixin ul-group2(cl)
   ul
-    each item in sliderImg
-      li: a(href="#", title=title) 
-            +link-img(item, cl, item)
+    - for(var item = 0; item < sliderImg.length; item++)
+      li: a(href="#", title= titles[item]) 
+            +link-img(sliderImg[item], cl, alts[item])

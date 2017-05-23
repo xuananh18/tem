@@ -73,10 +73,10 @@
     border-radius: 4px;
     background: linear-gradient(to bottom, #ffd300,#ffba00,#ff7400);
     margin-top: 17px;
-    .icon {
+    .icon-menu {
       .display();
     }
-    .icon2 {
+    .icon-close {
     .display();
     }
     ul {
@@ -126,10 +126,10 @@
 }
 @media screen and (min-width: 720px) and (max-width: 959px) {
   .menu li a {
-      font-size: 12px;
+    font-size: 12px;
   }
   .menu li:not(:last-child):after {
-      height: 37px;
+    height: 37px;
   }
   .menu ul li:not(:last-child):after {
     height: 38px;
@@ -137,35 +137,35 @@
 }
 @media screen and (min-width: 480px) and (max-width: 719px) {
   .lang {
-      max-height: 20px;
+    max-height: 20px;
   }
   .logo img {
-      width: 60%;
+    width: 60%;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 479px) {
   .logo img {
-        width: 70%;
+    width: 70%;
   }
   .lang {
-      max-height: 16px;
+    max-height: 16px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 719px) {
   .search {
-        flex-direction: column-reverse;
-        align-items: flex-end;
+    flex-direction: column-reverse;
+    align-items: flex-end;
   }
   .search-form {
-      max-height: 20px;
+    max-height: 20px;
   }
   .lang {
     margin-left: 0px;
     margin-bottom: 10px;
     &:before {
-        content: "";
-        width: 0px;
-        height: 0px;
+      content: "";
+      width: 0px;
+      height: 0px;
     }
   }
   .menu {
@@ -196,7 +196,7 @@
       font-size: 12px;
       display: flex;
     }
-    & > a.icon {
+    & > a.icon-menu {
       display: flex;
       flex-direction: column;
       max-width: 15px;
@@ -213,10 +213,10 @@
       background: rgba(56, 31, 15, 0.73);
       border-radius: 6px;
       transition: 0.5s;
-      a.icon {
+      a.icon-menu {
           display: none;
       }
-      a.icon2 {
+      a.icon-close {
         display: block;
         position: absolute;
         right: 0;
