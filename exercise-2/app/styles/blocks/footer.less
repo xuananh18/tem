@@ -35,13 +35,13 @@ footer {
 .contact-left, .contact-right {
     h2 {
       text-transform: uppercase;
-      font-size: 14px;
+      .px2em(~'font-size', 14px, @font-size-base);
       margin: 17px 0px 10px 0px;
     }  
 }
 .contact-left {
   p {
-    font-size: 12px;
+    .px2em(~'font-size', 12px, @font-size-base);
     margin: 5px 0px 0px 0px;
     color: gray;
     line-height: 14px;
@@ -75,7 +75,7 @@ footer {
       font-family: 'arialfont', sans-serif;
     li {
       text-transform: capitalize;
-        font-size: 12px;
+        .px2em(~'font-size', 12px, @font-size-base);
         line-height: 20px;
         position: relative;
         margin-left: 10px;
@@ -95,7 +95,7 @@ footer {
 .newletter-block {
     h2 {
           text-transform: uppercase;
-          font-size: 21px;
+          .px2em(~'font-size', 21px, @font-size-base);
           margin: 16px 0px 14px 10px;
           color: #ff7000;
     }
@@ -114,7 +114,7 @@ footer {
         height: 20px;
         border-radius: 4px;
         font-family: 'arialfont', sans-serif;
-        font-size: 11px;
+        .px2em(~'font-size', 11px, @font-size-base);
         padding: 12px 5px;
         /* margin-right: 5px; */
         background: linear-gradient(to bottom, white,#e6e6e6);
@@ -124,7 +124,7 @@ footer {
         border: none;
         border-radius: 4px;
         color: white;
-        font-size: 12px;
+        .px2em(~'font-size', 12px, @font-size-base);
         padding: 6px;
         text-shadow: 1px -2px #ff8a00;
         box-shadow: 1px 2px 5px #6f6f6f;
@@ -168,7 +168,7 @@ footer {
         text-decoration: none;
         text-transform: capitalize;
         color: black;
-        font-size: 9px;
+        .px2em(~'font-size', 9px, @font-size-base);
         font-weight: bold;
       }
         }
@@ -179,7 +179,7 @@ footer {
     align-items: center;
     p {
         margin: 2px 10px 0px 0px;
-        font-size: 11px;
+        .px2em(~'font-size', 11px, @font-size-base);
         text-transform: capitalize;
         color: gray;
     }
@@ -190,7 +190,7 @@ footer {
 @media screen and (min-width: 720px) and (max-width: 959px) {
   .signup-form {
       button {
-          font-size: 11px;
+          .px2em(~'font-size', 11px, @font-size-base);
           flex: 4;
           max-width: 80px;
           margin: 0px 10px 0px 10px;
@@ -207,7 +207,7 @@ footer {
           } 
         }
         a {
-            font-size: 8px;
+            .px2em(~'font-size', 8px, @font-size-base);
         }
   }
     .footer-bottom-right {
@@ -217,7 +217,7 @@ footer {
 @media screen and (min-width: 480px) and (max-width: 719px) {
   .newletter-block {
       h2 {
-        font-size: 18px;
+        .px2em(~'font-size', 18px, @font-size-base);
       }
     }
   .signup-form {
@@ -228,7 +228,7 @@ footer {
             margin-right: 10px;
         }
         button {
-            font-size: 11px;
+            .px2em(~'font-size', 11px, @font-size-base);
             margin: 5px 0px 0px 0px;
             max-width: 58px;
             padding: 6px 6px;
@@ -260,7 +260,7 @@ footer {
     }
     .newletter-block {
       h2 {
-        font-size: 16px;
+        .px2em(~'font-size', 16px, @font-size-base);
       }  
     }
     .signup-form {
@@ -268,7 +268,7 @@ footer {
             max-width: 255px;
         }
         button {
-            font-size: 11px;
+            .px2em(~'font-size', 11px, @font-size-base);
             max-width: 58px;
         }
     }
@@ -287,7 +287,7 @@ footer {
             }
         }
         a {
-            font-size: 9px;
+            .px2em(~'font-size', 9px, @font-size-base);
         }
     }
     .footer-bottom-right {

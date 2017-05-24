@@ -53,14 +53,6 @@
 		responsive: 'responsive'
   };
 
-  $(function() {
-    $('[data-' + pluginName + ']').on('customEvent', function() {
-    });
-
-    $('[data-' + pluginName + ']')[pluginName]({
-      key: 'custom'
-    });
-  });
 	$(function() {
     $('[data-' + pluginName + ']')[pluginName]({
       key: 'custom'
