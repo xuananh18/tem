@@ -2,16 +2,11 @@
 	.title
 		h2 partners
 	.partners-slider(data-sliders 
-									data-slideshare = '.slide-3'
-									data-dotshare = ''
-									data-previous = '.previous-3'
-									data-next = '.next-3'
 									data-times = '5000'
 									data-index = '0'
 									data-active = 'active'
-									data-display = 'flex'
-									data-textslide = '')
-		.slide-3.group-img
+									data-display = 'flex')
+		.slide-3.group-img.slide-share
 			|
 			|
 			- sliderImg = ["upload/logo-1.jpg", "upload/logo-2.jpg", "upload/logo-3.jpg"]
@@ -29,7 +24,7 @@
 					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
 					|
 					|
-		.slide-3.group-img
+		.slide-3.group-img.slide-share
 			|
 			|
 			- sliderImg = ["upload/logo-demo-1.png", "upload/logo-demo-2.png", "upload/logo-demo-3.png"]
@@ -47,5 +42,5 @@
 					a(href="#", class="single-img", title= titles[value]): +link-img(slide,'',alts[value])
 					|
 					|
-		button.previous-3
-		button.next-3
+		button.previous-3.previous-share
+		button.next-3.next-share

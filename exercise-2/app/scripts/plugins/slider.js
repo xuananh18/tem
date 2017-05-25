@@ -19,73 +19,72 @@
     this.init();
   }
 
-	function setslide(opt){
-		if(opt.textslide !=='') {
-			$(opt.textslide).removeClass(opt.display);
-			$(opt.textslide).eq(opt.index).addClass(opt.display);
-		}
-		if(opt.dotshare !=='') {
-			$(opt.dotshare).removeClass(opt.active);
-			$(opt.dotshare).eq(opt.index).addClass(opt.active);
-		}
-		$(opt.slideshare).removeClass(opt.display);
-		$(opt.slideshare).eq(opt.index).addClass(opt.display);
+  function slideheight(el) {
+  	var slideheight = el.height();
+  			slideheight = el.css({'height': el.find('.slide-share').height()});
+  	$(window).resize(function() {
+  			slideheight = el.css({'height': el.find('.slide-share').height()});
+  	});
+  }
+
+	function setslide(el, opt) {
+		el.find('.text-slide').removeClass(opt.display);
+		el.find('.text-slide').eq(opt.index).addClass(opt.display);
+		el.find('.dot-share').removeClass(opt.active);
+		el.find('.dot-share').eq(opt.index).addClass(opt.active);
+		el.find('.slide-share').removeClass(opt.display);
+		el.find('.slide-share').removeClass('behind');
+		el.find('.slide-share').eq(opt.index-1).addClass('behind');
+		el.find('.slide-share').eq(opt.index).addClass(opt.display);
 	}
 	
-	function showslide(opt){
-		var slideshare = $(opt.slideshare),
+	function showslide(el, opt){
+		var slideshare = el.find('.slide-share'),
         count = slideshare.length;
 		if(opt.index === count){opt.index=0;}
-		setslide(opt);
+		setslide(el, opt);
 		opt.index++;
-		opt.play = setTimeout(function() {showslide(opt);}, opt.times);
+		opt.play = setTimeout(function() {showslide(el, opt);}, opt.times);
 	}
-	function next(opt) {
-		var count = $(opt.slideshare).length;
-		if(opt.next !=='') {
-			$(opt.next).on('click', function(){
+	function next(el, opt) {
+		var count = el.find('.slide-share').length;
+			el.find('.next-share').on('click', function(){
 				if(opt.index === count){opt.index = 0;}
 				clearTimeout(opt.play);
-				showslide(opt);
+				showslide(el, opt);
 			});
-		}
 	}
 
-	function btnclick(opt){
-		$(opt.dotshare).on('click', function(){
-			opt.index = $(opt.dotshare).index(this);
-			setslide(opt);
+	function btnclick(el, opt){
+		el.find('.dot-share').on('click', function(){
+			opt.index = el.find('.dot-share').index(this);
+			setslide(el, opt);
 		});
 	}
 
-	function previous(opt) {
-		var count = $(opt.slideshare).length;
-		if(opt.previous !=='') {
-			$(opt.previous).on('click', function(){
+	function previous(el, opt) {
+		var count = el.find('.slide-share').length;
+			el.find('.previous-share').on('click', function(){
 				if(opt.index === 0){opt.index=count;}
+				console.log(opt.index);
 				opt.index =opt.index-2;
+				
 				clearTimeout(opt.play);
-				showslide(opt);
+				showslide(el, opt);
+
 			});
-		}
 	}
 
   Plugin.prototype = {
     init: function() {
-    	var opt = this.options;
-      showslide(opt);
-      btnclick(opt);
-      previous(opt);
-      next(opt);
-      console.log(this.element);
+    	var opt = this.options,
+    			el = this.element;
+      showslide(el, opt);
+      btnclick(el, opt);
+      previous(el, opt);
+      next(el, opt);
+      slideheight(el);
     },
-    publicMethod: function() {
-      $.isFunction(this.options.onCallback) && this.options.onCallback();
-      this.element.trigger('customEvent');
-    },
-    destroy: function() {
-      $.removeData(this.element[0], pluginName);
-    }
   };
 
   $.fn[pluginName] = function(options, params) {
@@ -100,15 +99,10 @@
   };
 
   $.fn[pluginName].defaults = {
-    slideshare: '.slide',
-		dotshare: '.dot',
-		previous: '.previous',
-		next: '.next',
-		times: '3000',
+		times: '3500',
 		index: 0,
 		active: 'active',
 		display: 'block',
-		textslide: '.text-slide',
 		play: null
   };
 

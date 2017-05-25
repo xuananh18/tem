@@ -20,11 +20,12 @@
   }
 
   function nav(el, opt) {
-    $(opt.iconmenu).on('click', function(){
+
+    el.find('.icon-menu').on('click', function(){
       var menu = $(opt.topnav);
       menu.toggleClass(opt.responsive);
     });
-    $(opt.iconclose).on('click', function(){
+    el.find('.icon-close').on('click', function(){
       var menu = $(opt.topnav);
       menu.removeClass(opt.responsive);
     });
@@ -47,8 +48,6 @@
   };
 
   $.fn[pluginName].defaults = {
-    iconmenu: '.icon-menu',
-		iconclose: '.icon-close',
 		topnav: '#topnav',
 		responsive: 'responsive'
   };

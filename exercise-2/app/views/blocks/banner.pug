@@ -7,13 +7,13 @@
 		var titles = ["banner 1", "banner 2", "banner 3", "banner 4",]
 	- 
 		var alts = ["slide-1", "slide-2", "slide-3", "slide-4",]
-	+ul-group('slide')
-	button.previous
-	button.next
+	+ul-group('slide slide-share')
+	button.previous.previous-share
+	button.next.next-share
 	ol.dots
 		|
 		|
 		- for(var i = 1; i <= sliderImg.length; i++)
-			li(class="dot") #{i}
+			li(class="dot dot-share") #{i}
 			|
 			|
