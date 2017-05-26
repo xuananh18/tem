@@ -46,6 +46,7 @@
 		opt.index++;
 		opt.play = setTimeout(function() {showslide(el, opt);}, opt.times);
 	}
+	
 	function next(el, opt) {
 		var count = el.find('.slide-share').length;
 			el.find('.next-share').on('click', function(){
@@ -68,10 +69,8 @@
 				if(opt.index === 0){opt.index=count;}
 				console.log(opt.index);
 				opt.index =opt.index-2;
-				
 				clearTimeout(opt.play);
 				showslide(el, opt);
-
 			});
 	}
 
