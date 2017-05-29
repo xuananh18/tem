@@ -1,0 +1,21 @@
+include ../mixins/all
+
+header
+	.menu(data-navs)
+		button(class="icon-menu") &#9776;
+		ul(class='menu-content', id='topnav')
+			-
+				var	faq = "faq<span>s</span>"
+				var	name = ["about us", "services", "news &amp; events", "gallery","contact us"]
+			each item in name
+				li: a(href="#", title != item)!= item
+			li: a(href="#",title="faqs") !{faq}
+	.logo
+		a(href='#', title='logo')
+			+link-img('logo.png','','logo')
+	.member
+		a(href='#', title='login', class='login') Login
+		a(href='#', title='register', class='register') Register
+		a(href='#', title='youtube', class='icon-youtube')
+		a(href='#', title='youtube', class='icon-facebook')
+		a(href='#', title='youtube', class='icon-instagram')

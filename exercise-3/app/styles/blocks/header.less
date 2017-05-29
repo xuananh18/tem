@@ -1,0 +1,87 @@
+header {
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/*-------------------- menu -------------------------------------*/
+.display() {
+  display: none;
+}
+.menu {
+  position: relative;
+  display: inline-block;
+  margin-left: 30px;
+  flex: 5.7;
+}
+.menu-content {
+  .display();
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 20;
+}
+.menu-content li a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.menu a:hover {
+  background-color: #f1f1f1
+}
+.icon-menu {
+  background-color: transparent;
+  color: white;
+  padding: 10px 17px 7px 17px;
+  font-size: 27px;
+  border: none;
+  cursor: pointer;
+}
+.icon-menu:hover {
+    background-color: #3e8e41;
+}
+.show {
+  display: block;
+}
+.logo {
+  display: flex;
+  flex: 4.3;
+}
+.member {
+  margin-right: 40px;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-end;
+}
+.member a {
+  color: white;
+  font-size: 12px;
+}
+.login {
+  margin-right: 41px;
+}
+.register {
+  margin-right: 43px;
+}
+.icon-youtube {
+  background: url(../images/icon-youtube.png) 0 0 no-repeat;
+  width: 15px;
+  height: 20px;
+  margin-right: 21px;
+}
+.icon-facebook {
+  background: url(../images/icon-facebook.png) 0 0 no-repeat;
+  width: 15px;
+  height: 20px;
+  margin-right: 14px;
+}
+.icon-instagram {
+  background: url(../images/icon-instagram.png) 0 0 no-repeat;
+  width: 16px;
+  height: 20px;
+}

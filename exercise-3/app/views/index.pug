@@ -1,0 +1,73 @@
+extends layouts/layout
+include ../views/mixins/all
+
+block vars
+	-title = 'Homepage'
+	-bodyClass = 'home'
+	-menuIndex = 0
+
+block container
+	main
+		include blocks/banner
+		.welcome-block
+			p.welcome-title Welcome to
+			+link-img('welcome-image.png','welcome-img', 'welcome image')
+			+link-img('big-logo.png','logo-img', 'logo image')
+			p.welcome-content Aenean luctus massa nibh, ac mollis sapien semper nec. Maecenas dignissim sollicitudin sem, et tempor leo fringilla et. Nulla pellentesq us pulvinar quam ut efficitur. Etiam finibus, nunc tristique ultricies fe rmentum, est justo suscipit quam, eu pharetra massa neque nec en im. Morbi lorem ante, semper in volutpat non, malesuada at turpis.
+			p.welcome-content Suspendisse pretium neque vitae nunc sempr, quis aliquam mi pretium. Pellentesque pellentesque nunc ac libero rhoncus luctus. Suspendisse vestibulum arcu egestas gravida lobortis. Pellentesque nec lacus id libero gravida mattis. Maecenas nisl justo, malesuada siu amet viverra vitae, scelerisque vel nisl. Duis ac odio eu urna scelerisque tempor quis in lorem.
+		.latestnews-block
+			p.lastnews-title latest news
+			.latestnews-content
+				.latestnews-content-1
+					+link-img('info-1.png','info-img','info image')
+					.content-child
+						span climbing
+						h2 article title
+						p Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ac porta ex, nec finibus sapien. Proin volutpat nunc est, eget blandit mauris porta it. Etiam sit amet viverra...
+							a(href='#', title='view more') more
+				.latestnews-content-2
+					+link-img('info-1.png','info-img','info image')
+					.content-child
+						span climbing
+						h2 article title
+						p Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ac porta ex, nec finibus sapien. Proin volutpat nunc est, eget blandit mauris porta it. Etiam sit amet viverra...
+							a(href='#', title='view more') more
+				.latestnews-content-3
+					+link-img('info-1.png','info-img','info image')
+					.content-child
+						span climbing
+						h2 article title
+						p Lorem ipsum dolor sit amet, consectetur adip iscing elit. Curabitur ac porta ex, nec finibus sapien. Proin volutpat nunc est, eget blandit mauris porta it. Etiam sit amet viverra...
+							a(href='#', title='view more') more
+		.climber-block
+			.cliber-contain
+				.climber-content-left
+					.climber-content-1
+						+link-img('climber-1.png','climber','climber image')
+						strong climber 01
+						span sports climber
+					.climber-content-2
+						span.block-quote-top "
+						p
+							|Lorem ipsum dolor sit amet, consect iscing elit. Curabitur ac porta ex, nec sapien. Proin volutpat nunc est, eget mauris. Etiam suez sit amet viverra.
+						span.block-quote-bottom "
+				.climber-content-mid
+					.climber-content-1
+						+link-img('climber-1.png','climber','climber image')
+						strong climber 01
+						span sports climber
+					.climber-content-2
+						span.block-quote-top "
+						p
+							|Lorem ipsum dolor sit amet, consect iscing elit. Curabitur ac porta ex, nec sapien. Proin volutpat nunc est, eget mauris. Etiam suez sit amet viverra.
+						span.block-quote-bottom "
+				.climber-content-right
+					.climber-content-1
+						+link-img('climber-1.png','climber','climber image')
+						strong climber 01
+						span sports climber
+					.climber-content-2
+						span.block-quote-top "
+						p
+							|Lorem ipsum dolor sit amet, consect iscing elit. Curabitur ac porta ex, nec sapien. Proin volutpat nunc est, eget mauris. Etiam suez sit amet viverra.
+						span.block-quote-bottom "
