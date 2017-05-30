@@ -24,7 +24,25 @@
     el.find('.icon-menu').on('click', function(){
       var menu = $(opt.topnav);
       menu.toggleClass(opt.show);
+      $('.closebtn').toggleClass(opt.show);
     });
+    $('.closebtn').on('click', function(){
+      $('.menu-content').removeClass('show');
+      $('.closebtn').removeClass('show');
+    })
+    window.onclick = function(event) {
+      if (!event.target.matches('.icon-menu')) {
+
+        var dropdowns = $('.menu-content');
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    };
   }
   Plugin.prototype = {
     init: function() {
