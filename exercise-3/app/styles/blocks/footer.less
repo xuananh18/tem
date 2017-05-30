@@ -1,307 +1,61 @@
 
 footer {
-    background-color: @bg-block;
-    border-radius: 4px;
-    padding-bottom: 10px;
-    margin-top: 20px;
+  background-image: url(../images/footer-background.png);
+  height:570px;
+  background-size: cover;
+}
+.footer-content {
+  max-width: 1127px;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  h2 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    width: 100%;
+    top: 29%;
+    font-size: 30px;
+    font-family: Poppins-Bold;
+  }
+  p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #f06919;
+    text-transform: uppercase;
+    font-family: Poppins-Medium;
+    top: 69%;
+  }
+}
+.form-submit {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  input {
+    padding: 18px 11px 14px 21px;
+    width: 27%;
+    border-radius: 45px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-transform: capitalize;
+    margin-right: 10px;
+    font-size: 16px;
+    font-family: Poppins-Medium;
+  }
+  button {
+    padding: 15px;
+    width: 15%;
+    border-radius: 45px;
+    background: #f06919;
+    border: none;
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
 }
 /*-------------------- footer-top-block ------------------------*/
-.footer-top-block {
-    display: flex;
-    flex-direction: row;
-    border-bottom: 1px solid #c3c3c3;
-    padding-bottom: 5px;
-}
-footer {
-  hr {
-    margin-bottom: 9px;
-  }  
-}
-.contact-left {
-    flex: 5.7;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.contact-right {
-    flex: 6.2;
-}
-.contact-block {
-  .flex(8, flex);
-  flex-direction: row;
-}
-.newletter-block {
-    flex: 4;
-}
-.contact-left, .contact-right {
-    h2 {
-      text-transform: uppercase;
-      .px2em(~'font-size', 14px, @font-size-base);
-      margin: 17px 0px 10px 0px;
-    }  
-}
-.contact-left {
-  p {
-    .px2em(~'font-size', 12px, @font-size-base);
-    margin: 5px 0px 0px 0px;
-    color: gray;
-    line-height: 14px;
-    font-family: 'arialfont', sans-serif;
-    span {
-        text-transform: capitalize;
-        font-weight: bold;
-        color: #505050;
-    }
-    &:nth-of-type(1) {
-        line-height: 20px;
-        text-transform: capitalize;
-    }
-    &:nth-of-type(2) {
-        margin-top: 4px;
-    }
-  }   
-}
-.contact-right {
-  h2 {
-      margin-left: 10px;
-  } 
-  &:before {
-    .pseudo("", 2px, 122px, linear-gradient(to right, #adadad,white), absolute);
-    margin: 17px 0px 0px 0px;
-  }
-  ul {
-      list-style-type: none;
-      margin: 0px;
-      padding: 0px;
-      font-family: 'arialfont', sans-serif;
-    li {
-      text-transform: capitalize;
-        .px2em(~'font-size', 12px, @font-size-base);
-        line-height: 20px;
-        position: relative;
-        margin-left: 10px;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: gray;
-    span {
-      text-transform: lowercase;
-    }
-  }
-  &:nth-of-type(3) {
-    text-transform: uppercase;
-  }
-}
-.newletter-block {
-    h2 {
-          text-transform: uppercase;
-          .px2em(~'font-size', 21px, @font-size-base);
-          margin: 16px 0px 14px 10px;
-          color: #ff7000;
-    }
-    &:before {
-        .pseudo("", 2px, 122px, linear-gradient(to right, #adadad,white), absolute);
-        margin: 17px 0px 0px 0px;
-    }
-}
-.signup-form {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-    input {
-        border: 1px solid #cacaca;
-        flex: 9.6;
-        height: 20px;
-        border-radius: 4px;
-        font-family: 'arialfont', sans-serif;
-        .px2em(~'font-size', 11px, @font-size-base);
-        padding: 12px 5px;
-        /* margin-right: 5px; */
-        background: linear-gradient(to bottom, white,#e6e6e6);
-    }
-    button {
-        flex: 2.4;
-        border: none;
-        border-radius: 4px;
-        color: white;
-        .px2em(~'font-size', 12px, @font-size-base);
-        padding: 6px;
-        text-shadow: 1px -2px #ff8a00;
-        box-shadow: 1px 2px 5px #6f6f6f;
-        text-transform: capitalize;
-        background: linear-gradient(to bottom, #ffd300,#ffba00,#ff7400);
-        font-weight: 800;
-        margin: 0px 13px 0px 15px;
-        &:hover {
-            background: #012a67;
-            transition: 0.5s;
-            text-shadow: 1px 0px transparent;
-            cursor: pointer;
-        }
-    }
-}
-/*-------------------- footer-bottom-block ------------------------*/
-.footer-bottom-block {
-    display: flex;
-    flex-direction: row;
-    margin-top: 9px;
-}
-.footer-bottom-left {
-    flex: 5.1;
-    margin-left: 10px;
-    ul {
-        list-style-type: none;
-        margin: 0px;
-        padding: 0px;
-        display: flex;
-        justify-content: space-between;
-    }
-    li {
-        display: inline;
-        position: relative;
-        &:not(:last-child):after {
-          .pseudo("", 1px, 10px, black, absolute);
-          margin-left: 6px;
-          bottom: 0px;
-        }
-      a {
-        text-decoration: none;
-        text-transform: capitalize;
-        color: black;
-        .px2em(~'font-size', 9px, @font-size-base);
-        font-weight: bold;
-      }
-        }
-}
-.footer-bottom-right {
-    .flex(6.9, flex);
-    justify-content: flex-end;
-    align-items: center;
-    p {
-        margin: 2px 10px 0px 0px;
-        .px2em(~'font-size', 11px, @font-size-base);
-        text-transform: capitalize;
-        color: gray;
-    }
-}
-@media only screen and (min-width: @screen-sm-min) {
 
-}
-@media screen and (min-width: 720px) and (max-width: 959px) {
-  .signup-form {
-      button {
-          .px2em(~'font-size', 11px, @font-size-base);
-          flex: 4;
-          max-width: 80px;
-          margin: 0px 10px 0px 10px;
-      }
-      input {
-          flex: 8;
-      }
-  }
-  .footer-bottom-left {
-      flex: 6;
-        li {
-          &:not(:last-child):after{
-            margin-left: 7px;
-          } 
-        }
-        a {
-            .px2em(~'font-size', 8px, @font-size-base);
-        }
-  }
-    .footer-bottom-right {
-      &:extend(.footer-bottom-left);
-  }
-}
-@media screen and (min-width: 480px) and (max-width: 719px) {
-  .newletter-block {
-      h2 {
-        .px2em(~'font-size', 18px, @font-size-base);
-      }
-    }
-  .signup-form {
-        flex-direction: row;
-        align-items: flex-end;
-        input {
-            max-width: 255px;
-            margin-right: 10px;
-        }
-        button {
-            .px2em(~'font-size', 11px, @font-size-base);
-            margin: 5px 0px 0px 0px;
-            max-width: 58px;
-            padding: 6px 6px;
-        }
-    }
-  .footer-bottom-block {
-      flex-direction: column;
-      align-items: center;
-  }
-  .footer-bottom-left {
-        li {
-      margin: 0px 7px;
-            &:not(:last-child):after {
-        width: 0px;
-            }
-        }
-      margin-left: 0px;
-  }
-  .footer-bottom-right {
-      margin-top: 5px;
-  }
-}
-@media screen and (min-width: 320px) and (max-width: 479px) {
-  .contact-left {
-        margin-right: 10px;
-    }
-    .contact-right:before {
-        width: 0px;
-    }
-    .newletter-block {
-      h2 {
-        .px2em(~'font-size', 16px, @font-size-base);
-      }  
-    }
-    .signup-form {
-        input {
-            max-width: 255px;
-        }
-        button {
-            .px2em(~'font-size', 11px, @font-size-base);
-            max-width: 58px;
-        }
-    }
-    .footer-bottom-block {
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer-bottom-left {
-        margin-left: 0px;
-        ul {
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin: 0px 10px; 
-            li {
-                margin: 0px 6px;
-            }
-        }
-        a {
-            .px2em(~'font-size', 9px, @font-size-base);
-        }
-    }
-    .footer-bottom-right {
-        margin-top: 5px;
-    }
-    .contact-block {
-        flex-direction: column;
-    }
-}
-@media screen and (min-width: 320px) and (max-width: 719px) {
-  .footer-top-block {
-        flex-direction: column;
-  }
-  .newletter-block:before {
-    width: 0px;
-  }
-}

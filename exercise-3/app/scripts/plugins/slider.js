@@ -21,12 +21,21 @@
 
   function slideheight(el) {
   	var slideheight = el.height(),
-  			welcomeheight = $('.welcome-block').height();
-  	welcomeheight = $('.welcome-block').css({'height': $('.welcome-img').height()});
+  			welcomeheight = $('.welcome-block').height(),
+  			climberheight = $('.climber-content-1').height();
+  			/*slide = $('.slide').height(),
+  			behind = $('.behind').height();*/
   	slideheight = el.css({'height': el.find('.slide-share').height()});
+  	welcomeheight = $('.welcome-block').css({'height': $('.welcome-img').height()});
+  	climberheight = $('.climber-content-1').css({'height': $('.climber').height()});
+  	/*slide = $('.slide').css({'left':$(window).height()});
+  	behind = $('.behind').css({'left':-$(window).height()});*/
   	$(window).resize(function() {
-  		welcomeheight = $('.welcome-block').css({'height': $('.welcome-img').height()});
   		slideheight = el.css({'height': el.find('.slide-share').height()});
+  		welcomeheight = $('.welcome-block').css({'height': $('.welcome-img').height()});
+  		climberheight = $('.climber-content-1').css({'height': $('.climber').height()});
+  		/*slide = $('.slide').css({'left':$(window).height()});
+  		behind = $('.behind').css({'left':-$(window).height()});*/
   	});
   }
 

@@ -87,6 +87,8 @@
   position: absolute;
   right: 0;
   z-index: -1;
+  width: 100%;
+  max-width: 562px;
 }
 .welcome-title {
   position: absolute;
@@ -96,6 +98,8 @@
 }
 .logo-img {
   margin-bottom: 53px;
+  max-width: 720px;
+  width: 100%;
 }
 .welcome-content {
   max-width: 43%;
@@ -137,6 +141,13 @@
   .content-child {
     margin-top: 21px;
   }
+  img {
+    width: 100%;
+  }
+  img:hover, img:hover, img:hover {
+    opacity: 0.5;
+    transition: 0.4s;
+  }
   span {
     font-size: 17px;
     color: #ed6b1e;
@@ -163,7 +174,7 @@
 /*-------- climber-block ---------*/
 .climber-block {
   background-image: url(../images/climber-background.png);
-  height: 719px;
+  height: 790px;
   margin-top: 97px;
   position: relative;
   display: flex;
@@ -179,22 +190,35 @@
 }
 .climber-content-1 {
   position: relative;
+  width: 100%;
   text-align: center;
-  line-height: 0px;
   strong {
-    position: absolute;
     display: block;
-    top: 40%;
+    position: absolute;
     color: white;
+    width: 100%;
+    top: 62%;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
   }
   span {
     position: absolute;
-    top: 45%;
     display: block;
+    width: 100%;
+    color: #d66724;
+    top: 74%;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: Poppins-Medium;
+  }
+  &:hover {
+    opacity: 0.5;
+    transition: 0.4s;
   }
 }
 .climber-content-2 {
-  padding: 106px 59px 119px 59px;
+  padding: 106px 59px 122px 59px;
   line-height: 18px;
   position: relative;
   .block-quote-top {
@@ -215,6 +239,10 @@
     font-weight: bold;
     color: white;
   }
+  &:hover {
+    opacity: 0.5;
+    transition: 0.4s;
+  }
 }
 .climber-content-left .climber-content-2 {
   background: #313234;
@@ -224,6 +252,12 @@
 }
 .climber-content-right .climber-content-2 {
   background: #313234;
+}
+.climber {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 /*-------- partners-block ---------*/
 .block {
