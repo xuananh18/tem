@@ -22,15 +22,16 @@
   function nav(el, opt) {
 
     el.find('.icon-menu').on('click', function(){
-      var menu = $(opt.topnav);
+      var menu = $(opt.topnav),
+          close = $(opt.closebtn);
       menu.toggleClass(opt.show);
-      $('.closebtn').toggleClass(opt.show);
+      close.addClass(opt.show);
     });
     $('.closebtn').on('click', function(){
       $('.menu-content').removeClass('show');
-      $('.closebtn').removeClass('show');
-    })
-    window.onclick = function(event) {
+      $(opt.closebtn).removeClass(opt.show);
+    });
+    /*window.onclick = function(event) {
       if (!event.target.matches('.icon-menu')) {
 
         var dropdowns = $('.menu-content');
@@ -42,7 +43,7 @@
           }
         }
       }
-    };
+    };*/
   }
   Plugin.prototype = {
     init: function() {
@@ -63,6 +64,7 @@
 
   $.fn[pluginName].defaults = {
 		topnav: '#topnav',
+    closebtn: '.closebtn',
 		show: 'show'
   };
 
